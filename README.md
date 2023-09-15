@@ -1,26 +1,9 @@
-# README
+Message.all.each { |m| m.destroy }
+UserRoom.all.each { |ur| ur.delete }
+Room.all.each { |r| r.destroy }
 
-bundle exec rake assets:precompile
+User.first.messages.new(room_id: Room.first.id, message: "Hello World 1").save
+User.first.messages.new(room_id: Room.first.id, message: "Hello World 2").save
+User.first.messages.new(room_id: Room.first.id, message: "Hello World 3").save
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
